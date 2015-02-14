@@ -12,8 +12,6 @@ import twitter4j.conf.ConfigurationBuilder;
 /**
  * Util for Twitter
  * 
- * @author Ivan Metla e-mail: metlaivan@gmail.com
- * 
  */
 public final class TwitterUtil {
 

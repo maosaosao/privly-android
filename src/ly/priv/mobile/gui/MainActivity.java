@@ -81,9 +81,9 @@ public class MainActivity extends SherlockFragmentActivity {
 		};
 		mDrawerLayout.setDrawerListener(hamburger);
 		createList = new ArrayList<String>(
-				Arrays.asList("PlainPost", "ZeroBin"));
-		readList = new ArrayList<String>(Arrays.asList("Gmail", "Facebook",
-				"Twitter"));
+				Arrays.asList("PlainPost", "Message"));
+		readList = new ArrayList<String>(Arrays.asList(
+				/* "Gmail", */"Facebook", "Twitter"));
 		ArrayList<DrawerObject> drawerItems = new ArrayList<DrawerObject>();
 		DrawerObject obj = new DrawerObject();
 		obj.setType("NavItem");
@@ -104,8 +104,8 @@ public class MainActivity extends SherlockFragmentActivity {
 			if (s.equals("PlainPost")) {
 				obj.setIcon(new IconDrawable(this, IconValue.fa_eye)
 						.colorRes(R.color.white));
-			} else if (s.equals("ZeroBin")) {
-				obj.setIcon(new IconDrawable(this, IconValue.fa_eye_slash)
+			} else if (s.equals("Message")) {
+				obj.setIcon(new IconDrawable(this, IconValue.fa_eye)
 						.colorRes(R.color.white));
 			}
 			drawerItems.add(obj);
@@ -249,17 +249,15 @@ public class MainActivity extends SherlockFragmentActivity {
 					Utilities.showToast(getApplicationContext(),
 							getString(R.string.no_internet_connection), true);
 			}
-
+			/*
+			 * if (position == 2 + createList.size() + 1) {
+			 * mDrawerLayout.closeDrawers(); GmailLinkGrabberService
+			 * gmailGrabber = new GmailLinkGrabberService(); FragmentTransaction
+			 * transaction = getSupportFragmentManager() .beginTransaction();
+			 * transaction.replace(R.id.container, gmailGrabber);
+			 * transaction.addToBackStack(null); transaction.commit(); }
+			 */
 			if (position == 2 + createList.size() + 1) {
-				mDrawerLayout.closeDrawers();
-				GmailLinkGrabberService gmailGrabber = new GmailLinkGrabberService();
-				FragmentTransaction transaction = getSupportFragmentManager()
-						.beginTransaction();
-				transaction.replace(R.id.container, gmailGrabber);
-				transaction.addToBackStack(null);
-				transaction.commit();
-			}
-			if (position == 2 + createList.size() + 2) {
 				mDrawerLayout.closeDrawers();
 				FaceBookGrabberService fbGrabber = new FaceBookGrabberService();
 				FragmentTransaction transaction = getSupportFragmentManager()
@@ -268,7 +266,7 @@ public class MainActivity extends SherlockFragmentActivity {
 				transaction.addToBackStack(null);
 				transaction.commit();
 			}
-			if (position == 2 + createList.size() + 3) {
+			if (position == 2 + createList.size() + 2) {
 				mDrawerLayout.closeDrawers();
 				TwitterGrabberService twitGrabber = new TwitterGrabberService();
 				FragmentTransaction transaction = getSupportFragmentManager()

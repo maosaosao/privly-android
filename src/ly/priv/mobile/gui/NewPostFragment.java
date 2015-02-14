@@ -59,6 +59,7 @@ public class NewPostFragment extends SherlockFragment {
 			if (Build.VERSION.SDK_INT >= VERSION_CODES.JELLY_BEAN)
 				w.getSettings().setAllowUniversalAccessFromFileURLs(true);
 			// Logs all Js Console messages on the logcat.
+			w.getSettings().setDomStorageEnabled(true);
 			w.setWebChromeClient(new WebChromeClient() {
 				@Override
 				public boolean onConsoleMessage(ConsoleMessage cm) {

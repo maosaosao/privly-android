@@ -29,8 +29,7 @@ import com.joanzapata.android.iconify.Iconify.IconValue;
 /**
  * Displays the Index application for a user after authentication.
  * 
- * @author Gitanshu Sardana
- */
+ * */
 
 public class IndexFragment extends SherlockFragment {
 	private static final String TAG = "IndexFragment";
@@ -88,6 +87,8 @@ public class IndexFragment extends SherlockFragment {
 			mWebViewIndex.getSettings().setAllowUniversalAccessFromFileURLs(
 					true);
 		}
+		mWebViewIndex.getSettings().setDomStorageEnabled(true);
+
 		// Logs all Js Console messages on the logcat.
 		mWebViewIndex.setWebChromeClient(new WebChromeClient() {
 			@Override
@@ -98,7 +99,7 @@ public class IndexFragment extends SherlockFragment {
 			}
 		});
 		mWebViewIndex
-				.loadUrl("file:///android_asset/PrivlyApplications/Index/new.html");
+				.loadUrl("file:///android_asset/PrivlyApplications/History/new.html");
 	}
 
 	/**

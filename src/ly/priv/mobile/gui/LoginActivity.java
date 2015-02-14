@@ -44,8 +44,7 @@ import com.actionbarsherlock.view.MenuItem;
  * Displays the login screen. Allows the user to authenticate to a Privly Web
  * Server by fetching the auth_token.
  * 
- * @author Shivam Verma
- */
+ */  
 public class LoginActivity extends SherlockActivity {
 	/** Called when the activity is first created. */
 	private String mUserName, mPassword, mLoginResponse, mContentServerDomain;
